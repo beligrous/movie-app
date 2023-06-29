@@ -30,9 +30,9 @@ const Trending = () => {
   return (
     <>
       {error ? (
-        <p>{error.message}</p>
+        alert(error.message)
       ) : (
-        <ul className="flex flex-wrap gap-1">{cardList}</ul>
+        <ul className={"flex flex-wrap gap-1"}>{cardList}</ul>
       )}
     </>
   );
