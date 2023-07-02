@@ -1,6 +1,5 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { createPortal } from "react-dom";
 import Modal from "../components/Modal";
 
 const TrendingCard = ({ data }) => {
@@ -16,11 +15,14 @@ const TrendingCard = ({ data }) => {
         src={`https://image.tmdb.org/t/p/w400/${data.poster_path}`}
         alt="movie poster"
       />
-      {showModal &&
-        createPortal(
-          <Modal data={data} onClose={() => setShowModal(false)} />,
-          document.body
-        )}
+      {showModal && (
+        <Modal
+          data={data}
+          onClose={() => {
+            setShowModal(false);
+          }}
+        />
+      )}
     </div>
   );
 };
